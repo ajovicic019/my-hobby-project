@@ -1,0 +1,183 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I love reading</title>
+    <style>
+      body {
+        background: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+        color: #3c0303;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      img {
+        max-width: 100%;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #3c0303;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: beige;
+        color: #3c0303;
+        padding: 10px 20px;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background-color: #3c0303;
+        color: beige;
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .container {
+        width: 600px;
+        margin: 30px auto;
+        background-color: beige;
+        padding: 30px;
+        border-radius: 4px;
+      }
+      .themeButton {
+        font-size: 12px;
+        background-color: #3c0303;
+        color: beige;
+        padding: 5px 10px;
+      }
+      .themeButton:hover {
+        background-color: beige;
+        color: #3c0303;
+      }
+      .libraryPicture {
+        border-radius: 4px;
+        transition: all 200ms ease-in-out;
+      }
+      .libraryPicture:hover {
+        transform: scale(1.2);
+        filter: grayscale(100%);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        margin: 15px 0;
+      }
+      .grid img {
+        border-radius: 4px;
+        width: 100%;
+        transition: all 200ms ease-in-out;
+      }
+      .grid img:hover {
+        transform: scale(1.1);
+      }
+      .dark {
+        background: radial-gradient(
+          1091px at 106.5% 111.5%,
+          rgb(250, 246, 213) 0.1%,
+          rgb(218, 147, 93) 42.2%,
+          rgb(137, 86, 67) 74.3%,
+          rgb(67, 39, 39) 100.2%
+        );
+        color: white;
+      }
+      .dark .container {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .dark .themeButton {
+        color: #3c0303;
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="themeButton">Change Theme</button>
+    <div class="container">
+      <h1>Book Club</h1>
+      <h2>Reading is a way of life</h2>
+      <a href="https://en.wikipedia.org/wiki/World_literature" target="_blank">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/396/original/books1.jpg?1674045387"
+          alt="Stack of books"
+          class="libraryPicture"
+      /></a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/535/original/nb.jpeg?1674116754"
+          alt="books"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/534/original/newbook3.jpeg?1674116539"
+          alt="books"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/533/original/newbook2.jpeg?1674116510"
+          alt="books"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/536/original/pexels-photo-2663851.jpeg?1674116801"
+          alt="books"
+        />
+      </div>
+      <p>
+        "I am more and more convinced that poetry is the universal possession of
+        mankind, revealing itself everywhere and at all times in hundreds and
+        hundreds of men...."<br />Johann Wolfgang Goethe
+      </p>
+      <button class="joinClub">Join Club</button>
+    </div>
+    <footer>Coded by 📖 lover Andrea Jovicic</footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        body.classList.toggle("dark");
+      }
+
+      let themeButton = document.querySelector(".themeButton");
+      themeButton.addEventListener("click", changeTheme);
+
+      function joinClub() {
+        let name = prompt("What is your name?");
+        let book = prompt("What is your favorite book?");
+        let age = prompt("How old are you?");
+
+        if (age >= 16) {
+          alert(
+            "Hi, " +
+              name +
+              "! You are welcome to join the club! We will be talking about " +
+              book +
+              " very soon."
+          );
+        } else {
+          alert(
+            "Hi, " +
+              name +
+              "! We are sorry, you are too young to join the club. But please continue enjoing reading " +
+              book +
+              "."
+          );
+        }
+      }
+
+      let joinClubButton = document.querySelector(".joinClub");
+      joinClubButton.addEventListener("click", joinClub);
+    </script>
+  </body>
+</html>
